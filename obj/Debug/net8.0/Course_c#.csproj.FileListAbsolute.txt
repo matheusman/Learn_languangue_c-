@@ -1,0 +1,14 @@
+D:\Downloads\Course_c#\bin\Debug\net8.0\Course_c#.exe
+D:\Downloads\Course_c#\bin\Debug\net8.0\Course_c#.deps.json
+D:\Downloads\Course_c#\bin\Debug\net8.0\Course_c#.runtimeconfig.json
+D:\Downloads\Course_c#\bin\Debug\net8.0\Course_c#.dll
+D:\Downloads\Course_c#\bin\Debug\net8.0\Course_c#.pdb
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.AssemblyInfoInputs.cache
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.AssemblyInfo.cs
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.csproj.CoreCompileInputs.cache
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.dll
+D:\Downloads\Course_c#\obj\Debug\net8.0\refint\Course_c#.dll
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.pdb
+D:\Downloads\Course_c#\obj\Debug\net8.0\Course_c#.genruntimeconfig.cache
+D:\Downloads\Course_c#\obj\Debug\net8.0\ref\Course_c#.dll
