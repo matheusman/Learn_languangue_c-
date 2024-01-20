@@ -13,7 +13,7 @@ class Account
 		Balance = balance;
 	}
 
-	public void WithDraw(double amount)
+	public virtual void WithDraw(double amount)
 	{
 		Balance -= amount;
 	}
