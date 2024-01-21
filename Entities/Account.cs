@@ -1,26 +1,20 @@
-class Account
+namespace Course.Entity
 {
-	public int Number { get; set; }
-	public string Holder { get; set; }
-	public double Balance { get; set; }
-
-	public Account() { }
-
-	public Account(int number, string holder, double balance)
+	abstract class Account
 	{
-		Number = number;
-		Holder = holder;
-		Balance = balance;
-	}
+		public int Number { get; set; }
+		public string Holder { get; set; }
+		public double Balance { get; set; }
 
-	public void WithDraw(double amount)
-	{
-		Balance -= amount;
-	}
+		public Account(int number, string holder, double balance)
+		{
+			Number = number;
+			Holder = holder;
+			Balance = balance;
+		}
 
-	public void Deposit(double amount)
-	{
-		Balance += amount;
-	}
+		public abstract double WithDraw (double amount);
 
+		public abstract double Deposite(double amount);
+	}
 }
