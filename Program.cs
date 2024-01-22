@@ -8,13 +8,20 @@ namespace Course
 	{
 		public static void Main(string[] args)
 		{
-			string path = @"D:\Downloads\Course_c#";
-			string folderName = @"\newFolder";
-			Directory.CreateDirectory(path + folderName);
-			string name = WriteInConsole("Coloque um nome do arquivo");
-			using (FileStream fs = File.Create(path + "\\" + name)) {
-				File.AppendAllText(path, "Testando o metodo");
+			string folderName = @"D:\Downloads\Course_c#\newFolder";
+			string sourcePath = @"D:\Downloads\Course_c#\newFolder\text.txt";
+			string rootPath = @"D:\Downloads\Course_c#\newFolder\text1.txt";
+			Directory.CreateDirectory(folderName);
+			using ( FileStream fs = new FileStream(sourcePath, FileMode.Create)) {
+				using (StreamWriter sw = new StreamWriter(fs)) {
+					sw.WriteLine("asidjioasjdio");
+				}
 			}
+
+			using (StreamWriter sw = new StreamWriter(rootPath)) {
+				sw.WriteLine("asdasd");
+			}
+
 		}
 
 		public static string WriteInConsole(string value)
