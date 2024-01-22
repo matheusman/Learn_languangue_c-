@@ -9,30 +9,15 @@ namespace Course
 		{
 			string path = @"D:\Downloads\Course_c#\text.txt";
 			using (StreamReader sr = File.OpenText(path)) {
-				List<Product> list = new List<Product>();
+				HashSet<string> products = new HashSet<string>();
 				while (!sr.EndOfStream) {
-					string line = sr.ReadLine();
-					string[] split = line.Split(",");
-					string name = split[0];
-					int number = int.Parse(split[1]);
-					list.Add(new Product(name, number));
+					string lines = sr.ReadLine();
+					products.Add(lines.Split(",")[0]);
 				}
-				string max = Max(list);
-				System.Console.WriteLine(max);
+				System.Console.WriteLine(products.Count);
 			}
 		}
 
-		public static string Max (List<Product> list) {
-			Product maxArr = list[0];
-			for (int e = 0; e < list.Count(); e++) {
-				int num = list[e].Name.CompareTo(maxArr.Name);
-				if (num > 0) {
-					maxArr = list[e];
-				}
-			}
-
-			return maxArr.Name;
-		}
 
 	}
 }
