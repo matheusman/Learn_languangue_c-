@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.IO;
 using System.Runtime.Intrinsics.Arm;
 using System.Text.RegularExpressions;
+using Course.Entitie;
 
 namespace Course
 {
@@ -8,31 +10,10 @@ namespace Course
 	{
 		public static void Main(string[] args)
 		{
-			string folderName = @"D:\Downloads\Course_c#\newFolder";
-			string sourcePath = @"D:\Downloads\Course_c#\newFolder\text.txt";
-			string rootPath = @"D:\Downloads\Course_c#\newFolder\text1.txt";
-			Directory.CreateDirectory(folderName);
-			using ( FileStream fs = new FileStream(sourcePath, FileMode.Create)) {
-				using (StreamWriter sw = new StreamWriter(fs)) {
-					sw.WriteLine("asidjioasjdio");
-				}
-			}
-
-			using (StreamWriter sw = new StreamWriter(rootPath)) {
-				sw.WriteLine("asdasd");
-			}
-
-			var filesAll = Directory.EnumerateFiles(folderName, "*.*", SearchOption.AllDirectories);
-			foreach ( string s in filesAll) {
-				Console.WriteLine(s);
-			}
+			Circle circle = new Circle(Color.Black, 3.10);
+			double num = circle.Area();
+			System.Console.WriteLine(num);
 		}
 
-		public static string WriteInConsole(string value)
-		{
-			Console.Write(value);
-			string read = Console.ReadLine();
-			return read;
-		}
 	}
 }
