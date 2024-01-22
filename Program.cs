@@ -22,6 +22,10 @@ namespace Course
 				sw.WriteLine("asdasd");
 			}
 
+			var filesAll = Directory.EnumerateFiles(folderName, "*.*", SearchOption.AllDirectories);
+			foreach ( string s in filesAll) {
+				Console.WriteLine(s);
+			}
 		}
 
 		public static string WriteInConsole(string value)
