@@ -1,5 +1,4 @@
 ﻿using System;
-using Course.Model;
 
 namespace Course
 {
@@ -8,13 +7,27 @@ namespace Course
 		public static void Main(string[] args)
 		{
 			string path = @"D:\Downloads\Course_c#\text.txt";
-			using (StreamReader sr = File.OpenText(path)) {
-				HashSet<string> products = new HashSet<string>();
-				while (!sr.EndOfStream) {
-					string lines = sr.ReadLine();
-					products.Add(lines.Split(",")[0]);
-				}
-				System.Console.WriteLine(products.Count);
+			using (FileStream fs = File.OpenRead(path))
+			{
+				using (StreamReader sr = new StreamReader(fs))
+				{
+					Dictionary<string, int> person = new Dictionary<string, int>();
+					while (!sr.EndOfStream)
+					{
+						string line = sr.ReadLine().Replace(" ", "");
+						string[] split = line.Split(",");
+						string name = split[0];
+						int number = int.Parse(split[1]);
+						if (person.ContainsKey(name))
+						{
+							person[name] = person[name] + number;
+						}
+						else
+						{
+							person.Add(name, number);
+						}
+					}
+				};
 			}
 		}
 
