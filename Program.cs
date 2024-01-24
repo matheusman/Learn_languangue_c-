@@ -1,4 +1,4 @@
-﻿using Course.Entity;
+﻿using System;
 
 namespace Course
 {
@@ -6,17 +6,31 @@ namespace Course
 	{
 		public static void Main(string[] args)
 		{
-			Account acc1 = new Account(0, "Alex", 100.0);
-			BuinnesAccount acc2 = new BuinnesAccount(0, "Joao", 100.0, 200.00);
-
-			//Upcasting
-			Account acc3 = new BuinnesAccount(0, "jorje", 100.0, 100.0);
-
-			//Downcasting
-			if (acc3 is BuinnesAccount) {
-				BuinnesAccount acc4 = (BuinnesAccount)acc3;
-				Console.WriteLine("Write");
+			string path = @"D:\Downloads\Course_c#\text.txt";
+			using (FileStream fs = File.OpenRead(path))
+			{
+				using (StreamReader sr = new StreamReader(fs))
+				{
+					Dictionary<string, int> person = new Dictionary<string, int>();
+					while (!sr.EndOfStream)
+					{
+						string line = sr.ReadLine().Replace(" ", "");
+						string[] split = line.Split(",");
+						string name = split[0];
+						int number = int.Parse(split[1]);
+						if (person.ContainsKey(name))
+						{
+							person[name] = person[name] + number;
+						}
+						else
+						{
+							person.Add(name, number);
+						}
+					}
+				};
 			}
 		}
+
+
 	}
 }
