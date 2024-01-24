@@ -1,5 +1,4 @@
-Maria,1000
-Joao,1400
-Larissa,1500
-Joao,1400
-Larissa,1500
+Matheus
+Maria
+Fernando
+Luna
