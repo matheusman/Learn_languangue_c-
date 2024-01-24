@@ -1,4 +1,4 @@
-Matheus
-Maria
-Fernando
-Luna
+Makita,1000
+Celular,2000
+Rol,100
+Caneleira,200
